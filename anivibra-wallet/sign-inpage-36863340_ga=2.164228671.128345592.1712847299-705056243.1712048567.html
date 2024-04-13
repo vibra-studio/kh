@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            max-width: 90%;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3898ec;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #207bd2;
+        }
+
+        @media screen and (min-width: 768px) {
+            .container {
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign In</h1>
+        <form id="signinForm">
+            <input type="text" id="username" placeholder="Username">
+            <input type="text" id="code" placeholder="Code">
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("signinForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get input values
+            var username = document.getElementById("username").value.trim(); // Trim leading and trailing spaces
+            var code = document.getElementById("code").value.trim(); // Trim leading and trailing spaces
+            
+            // Check username and code
+            if (username === "wally" && code === "8HnLS!20") {
+                window.location.href = "/page-36863340_ga=2.164228671.128345592.1712847299-705056243.1712048567/users/wallyson/dash+c3757960-c996-4405-882d-64c075f7b10b.html"; // Redirect to Wally's account page
+            } else if (username === "qanics" && code === "9JbKa?39") {
+                window.location.href = "/page-36863340_ga=2.164228671.128345592.1712847299-705056243.1712048567/users/jad/dashFM4fcgz42Gx5S8lKtT2PW354KdW22zhCfCn587sKNxxmXr.html"; // Redirect to Qanics's account page
+            } else if (username === "khalil" && code === "6qhfnrsb") {
+                window.location.href = "/page-36863340_ga=2.164228671.128345592.1712847299-705056243.1712048567/users/khalil/demo.html"; // Redirect to Khalil's account page
+            } else {
+                var errorMessage = document.createElement('div');
+                errorMessage.textContent = "Incorrect username or code. Please try again.";
+                errorMessage.style.color = "red";
+                errorMessage.style.marginTop = "5px";
+                document.getElementById("code").insertAdjacentElement('afterend', errorMessage);
+                
+                // Remove the error message after 3 seconds
+                setTimeout(function() {
+                    errorMessage.remove();
+                }, 2000);
+            }
+            
+        });
+    </script>
+    
+     <script>
+        $(window).on('load', function() {
+            var hash = window.location.hash;
+            console.log(hash);
+            $(hash).click();
+        });
+
+        
+    </script>
+     <script>// Disable right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+        
+        // Disable F12 key, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, and Ctrl+U
+        document.onkeydown = function(e) {
+          if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) {
+            e.preventDefault();
+            return false;
+          }
+        };</script>
+     
+</body>
+</html>
